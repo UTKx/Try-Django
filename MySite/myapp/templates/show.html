@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gareeb|Show</title>
+</head>
+
+<body>
+
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <br>
+    <h1 style="text-align: center;">List of Gareebs</h1><br>
+    <div class="containe">
+        <table class="table table-dark table-bordered table-hover table-striped">
+            <!-- <caption>List of gareebs</caption> -->
+            <thead style="background-color: #18FF6D;">
+                <tr>
+                    <th style="text-align: center;">#</th>
+                    <th style="text-align: center;">Name</th>
+                    <th style="text-align: center;">Email</th>
+                    <th style="text-align: center;">Password</th>
+                    <th style="text-align: center;">Address1</th>
+                    <th style="text-align: center;">Address2</th>
+                    <th style="text-align: center;">City</th>
+                    <th style="text-align: center;">State</th>
+                    <th style="text-align: center;">Zipcode</th>
+                    <th style="text-align: center;" colspan="2">Action</th>
+                </tr>
+            </thead>
+
+            {% for data in data %}
+            <tr>
+                <th style="text-align: center; vertical-align: middle;">{{ data.id }}</th>
+                <td style="text-align: center; vertical-align: middle;">{{ data.name }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.email }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.password }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.address1 }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.address2 }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.city }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.state }}</td>
+                <td style="text-align: center; vertical-align: middle;">{{ data.zip }}</td>
+                <td style="text-align: center; vertical-align: middle;"><a href=""><button class="btn btn-sm"
+                            style="background-color: #FFDB00; width: 80px;">Update</button></a>
+                    <a href="/delete/{{ data.id }}"><button class="btn btn-sm"
+                            style="background-color: #FF101F; width: 80px;">Delete</button></a>
+                </td>
+                <!-- <td style="text-align: center; vertical-align: middle;"><a href=""><button class="btn btn-sm"
+                            style="background-color: #FF101F; width: 80px;">Delete</button></a>
+                </td> -->
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
