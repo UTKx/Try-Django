@@ -15,8 +15,14 @@
 
 {% if messages %}
 {% for message in messages %}
-<div style=" margin-left: 40%; margin-top: 20px;" class="alert alert-danger" role="alert">
-	{{ message }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0">
+            <div class="alert alert-warning alert-dismissible fade in text-center alert-danger" role="alert">
+               {{ message}}
+            </div>
+        </div>
+  </div>
 </div>
 {% endfor %}
 {% endif %}
