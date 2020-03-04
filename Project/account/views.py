@@ -15,7 +15,7 @@ def register(request):
     
         if password == cpassword:
             if User.objects.filter(username=username).exists():
-                messages.error(request, 'Usaername already exists.')
+                messages.error(request, 'Username already exists.')
                 return redirect('/auth/register/')
             elif User.objects.filter(email=email).exists():
                 messages.error(request, 'Email already exists.')
