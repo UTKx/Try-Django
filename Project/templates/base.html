@@ -58,9 +58,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="agile-login">
 				<ul>
+					{% if user.is_authenticated %}
+					<li style="color: white;">Welcome {{ user.username}}</li>
+					<li><a href="auth/logout/">Logout</a></li>
+					{% else %}
 					<li><a href="auth/register"> Create Account </a></li>
 					<li><a href="auth/login">Login</a></li>
-					<li><a href="contact.html">Help</a></li>
+					{% endif %}
 					
 				</ul>
 			</div>
